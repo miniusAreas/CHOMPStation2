@@ -8,13 +8,16 @@
 	if(!istype(target))
 		return
 
-	var/list/smite_types = list(SMITE_BREAKLEGS,SMITE_BLUESPACEARTILLERY,SMITE_SPONTANEOUSCOMBUSTION,SMITE_LIGHTNINGBOLT)
+	var/list/smite_types = list(SMITE_PIE,SMITE_BREAKLEGS,SMITE_BLUESPACEARTILLERY,SMITE_SPONTANEOUSCOMBUSTION,SMITE_LIGHTNINGBOLT)//CHOMP Edit added pie smite
 
 	var/smite_choice = input("Select the type of SMITE for [target]","SMITE Type Choice") as null|anything in smite_types
 	if(!smite_choice)
 		return
 
 	switch(smite_choice)
+		if(SMITE_PIE)//CHOMP Addition
+			var/obj/item/reagent_containers/food/snacks/pie/cream/nostun/creamy = new(get_turf(target))
+			creamy.splat(target,src)
 		if(SMITE_BREAKLEGS)
 			var/broken_legs = 0
 			var/obj/item/organ/external/left_leg = target.get_organ(BP_L_LEG)

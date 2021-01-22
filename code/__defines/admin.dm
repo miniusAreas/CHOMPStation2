@@ -41,6 +41,7 @@
 
 #define R_MAXPERMISSION 0x8000 // This holds the maximum value for a permission. It is used in iteration, so keep it updated.
 
+#define SMITE_PIE					"Cream Pie"
 #define SMITE_BREAKLEGS				"Break Legs"
 #define SMITE_BLUESPACEARTILLERY	"Bluespace Artillery"
 #define SMITE_SPONTANEOUSCOMBUSTION	"Spontaneous Combustion"
